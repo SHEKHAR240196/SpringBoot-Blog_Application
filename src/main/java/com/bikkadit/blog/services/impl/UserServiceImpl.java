@@ -1,11 +1,13 @@
 package com.bikkadit.blog.services.impl;
 
 import java.util.List;
+
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bikkadit.blog.entities.User;
 import com.bikkadit.blog.exceptions.ResourceNotFoundException;
 import com.bikkadit.blog.payloads.UserDto;
 import com.bikkadit.blog.repositories.UserRepository;
