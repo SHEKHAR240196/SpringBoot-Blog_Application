@@ -16,7 +16,7 @@ import com.bikkadit.blog.services.UserService;
 public class UserController {
 	
 	@Autowired
-	private UserService userService;
+   private UserService userService;
 	
 	//	POST- Create user
 	

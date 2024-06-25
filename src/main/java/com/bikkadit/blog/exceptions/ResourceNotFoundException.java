@@ -1,6 +1,7 @@
 package com.bikkadit.blog.exceptions;
 
 import lombok.Getter;
+
 import lombok.Setter;
 
 @Getter
@@ -12,7 +13,7 @@ public class ResourceNotFoundException extends RuntimeException {
 	int fieldValue;
 	
 	public ResourceNotFoundException(String resourceName, String fieldName, int fieldValue) {
-		super();
+		super(String.format("%s not found with %s : %l " ,resourceName, fieldName, fieldValue));
 		this.resourceName = resourceName;
 		this.fieldName = fieldName;
 		this.fieldValue = fieldValue;

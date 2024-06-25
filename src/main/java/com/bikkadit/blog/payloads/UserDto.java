@@ -1,6 +1,7 @@
 package com.bikkadit.blog.payloads;
 
 import lombok.Getter;
+
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
