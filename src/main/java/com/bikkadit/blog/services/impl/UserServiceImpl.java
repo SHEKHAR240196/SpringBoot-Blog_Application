@@ -3,6 +3,7 @@ package com.bikkadit.blog.services.impl;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,9 @@ public  class UserServiceImpl implements UserService{
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private ModelMapper modelMapper;
 
 	@Override
 	public UserDto createUser(UserDto userDto) {
@@ -72,12 +76,12 @@ public  class UserServiceImpl implements UserService{
 
 	public User dtotoUser(UserDto userDto) {
 
-		User user = new User();
-		user.setId(userDto.getId());
-		user.setName(userDto.getName());
-		user.setEmail(userDto.getEmail());
-		user.setPass(userDto.getPass());
-		user.setAbout(userDto.getAbout());
+		User user = this.modelMapper.map(userDto, User.class);
+//		user.setId(userDto.getId());
+//		user.setName(userDto.getName());
+//		user.setEmail(userDto.getEmail());
+//		user.setPass(userDto.getPass());
+//		user.setAbout(userDto.getAbout());
 
 		return user;
 
@@ -85,12 +89,13 @@ public  class UserServiceImpl implements UserService{
 
 	public UserDto usertoDto(User user) {
 
-		UserDto userdto = new UserDto();
-		userdto.setId(user.getId());
-		userdto.setName(user.getName());
-		userdto.setEmail(user.getEmail());
-		userdto.setPass(user.getPass());
-		userdto.setAbout(user.getAbout());
+		UserDto userdto = this.modelMapper.map(user , UserDto.class);
+		
+//		userdto.setId(user.getId());
+//		userdto.setName(user.getName());
+//		userdto.setEmail(user.getEmail());
+//		userdto.setPass(user.getPass());
+//		userdto.setAbout(user.getAbout());
 
 		return userdto;
 
